@@ -5,9 +5,30 @@ public class Main {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Enter a number that is either positive, even, and a multiple of 7 OR prime:");
     int userNumber = scanner.nextInt();
-    
-    
-
+    boolean valid = false;
+    while (!valid) {
+      if (isPrime(userNumber)) {
+        valid = true;
+      } else {
+        valid = true;
+        if (userNumber <= 0) {
+          System.out.println("> Not positive");
+          valid = false;
+        }
+        if (userNumber % 2 != 0) {
+          System.out.println("> Not even");
+          valid = false;
+        }
+        if (userNumber % 7 != 0) {
+          System.out.println("> Not a multiple of 7");
+          valid = false;
+        }
+        if (!valid) {
+          System.out.println("Try again:");
+          userNumber = scanner.nextInt();
+        }
+      }
+    }
   }
 
   /* Returns true if number is prime and false
