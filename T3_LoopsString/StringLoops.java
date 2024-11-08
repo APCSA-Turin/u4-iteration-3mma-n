@@ -176,9 +176,86 @@ public class StringLoops {
         System.out.print(i);
         if (i<toNum) {
           System.out.print(", ");
+        } else {
+          System.out.println("");
         }
       }
     }
+    
+     /* Returns true if myString is a palindrome, i.e. the characters read the same
+    forwards and backwards, and false otherwise. Don't worry about case.
+    NOTE!  Spaces should be disregarded when determining if it's a palindrome.
+    "no lemon no melon" is a palindrome!
+    
+     Examples:
+     - myString = "A", return true
+     - myString = "mom", return true
+     - myString = "dad", return true
+     - myString = "bob", return true
+     - myString = "noon", return true
+     - myString = "deed", return true
+     - myString = "12321", return true
+     - myString = "aaaaaaa", return true
+     - myString = "baaabaaab", return true
+     - myString = "civic", return true
+     - myString = "kayak", return true
+     - myString = "racecar", return true
+     - myString = "my gym", return true
+     - myString = "step on no pets", return true
+     - myString = "45TTGTT54", return true
+     - myString = "no lemon no melon", return true
+     - myString = "a nut for a jar of tuna", return true
+     - myString = "! 1 2 3 4 M 6M4321!", return true
+     - myString = "was it a car or a cat i saw", return true
+     - myString = "a man a plan a canal panama", return true
+     - myString = "mod", return false
+     - myString = "dang", return false
+     - myString = "boo", return false
+     - myString = "noonish", return false
+     - myString = "indeed", return false
+     - myString = "1234432", return false
+     - myString = "civics", return false
+     - myString = "kayaks", return false
+     - myString = "racing car", return false
+     - myString = "my gyms", return false
+     - myString = "step on pets", return false
+     - myString = "1 3 2 4 3 2 1", return false
+     - myString = "AAADAA", return false
+     - myString = "BaaBaaaB", return false
+    */
+  public boolean isPalindrome(String myString) {
+    myString = removeString(" ", myString);
+    if (myString.equals(reverseString(myString))) {
+      return true;
+    }
+    return false;
+  }
+
+   /* Prints the String toPrint num times on a single line separated by spaces,
+    within an opening bracket and closing bracket; there should not be a space
+    between the final toPrint and the closing bracket,
+    e.g. [hello hello hello hello]
+    
+    If numtimes <= 0, print just empty brackets (no space): []
+    After printing the closing bracket, move the cursor to the next line.
+     
+    Examples:
+    - toPrint = "hello" and num = 4, print: [hello hello hello hello]
+    - toPrint = "beetlejuice" and num = 3, print: [beetlejuice beetlejuice beetlejuice]
+    - toPrint = "hi there" and num = 2, print: [hi there hi there]
+    - toPrint = "boop!" and num = 1, print: [boop!]
+    - toPrint = "dance party" and num = 0, print: []
+    - toPrint = "anything" and num = -4, print: []
+    */
+    public void multiPrint(String toPrint, int num) {
+      System.out.print("[");
+      for (int i=0; i<num; i++) {
+        System.out.print(toPrint);
+        if (i < num - 1) {
+          System.out.print(" ");
+        }
+      }
+      System.out.println("]");
+    }
   
- 
 }
