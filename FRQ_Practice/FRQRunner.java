@@ -1,13 +1,25 @@
 public class FRQRunner {
     public static void main(String[] args) {
-        FRQAnswers frq = new FRQAnswers();
-        System.out.println(frq.longestStreak("CCAAAAATTT!"));
-        System.out.println(frq.longestStreak("CCCCAAATTT!"));
-        System.out.println(frq.longestStreak("CCCAATTT!"));
-        System.out.println(frq.longestStreak("CCCCAATTTTTT!"));
-        System.out.println(frq.longestStreak("cbbaaabbmgg"));
-        System.out.println(frq.longestStreak("cbbaaabbggg"));
-        System.out.println(frq.longestStreak("ABCDEFGHIJ"));
-        System.out.println(frq.longestStreak("AAAAAAAAAA"));
+        CoinGame game1 = new CoinGame(10, 5);
+        game1.playGame();
+        
+        CoinGame game2 = new CoinGame(10, 4);
+        game2.playGame();
+        
+        CoinGame game3 = new CoinGame(10, 3);
+        game3.playGame();
+        
+        CoinGame game4 = new CoinGame(10, 2);
+        game4.playGame();
+        
+        CoinGame game5 = new CoinGame(10, 6);
+        game5.playGame();
+        
+        CoinGame game6 = new CoinGame(5, 4);
+        game6.playGame();
+        
+        CoinGame game7 = new CoinGame(7, 4);
+        game7.playGame();
+        
     }
 }
